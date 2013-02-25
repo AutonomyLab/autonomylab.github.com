@@ -1,5 +1,26 @@
+
+/* tab UI on publications page */
+#tabs ul {
+	list-style: none;
+	padding-bottom:1em;
+	margin:0;
+	font-weight: bold;
+}
+
+#tabs li {
+	display: inline;
+	margin: 0 0.5em 0 0;
+}
+
+#tabs li a {
+	padding: 0 1em;
+}
+
+
 .icons { align:center; padding:0.8em; padding-left:0; }
 .icons img { align:center; padding:0.2em;}
+
+/* #tabs { width: 100%; } */
 
 body {
   font-family: sans-serif;
