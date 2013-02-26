@@ -17,6 +17,19 @@
 }
 
 
+.bibtexitem
+{
+    padding-bottom: 1em;
+    font-size: 90%;
+}
+
+.bibtexnumber 
+{
+    padding-bottom: 1em;
+    font-size: 90%;
+}
+
+
 .icons { align:center; padding:0.8em; padding-left:0; }
 .icons img { align:center; padding:0.2em;}
 
