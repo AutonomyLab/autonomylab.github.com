@@ -1,0 +1,217 @@
+
+Player/Stage Getting Started
+
+Author: Richard Vaughan (rtv) 
+Created: 2004.02.05
+
+Revisions:
+rtv - 2004.02.05
+rtv, Reed Hedges - 2004.02.06
+
+CVS: $id$
+
+Instructions for installing the Player/Stage system
+--------------------------------------------------
+
+You must take the following steps in this order:
+
+-1: install prerequisites
+ 0. get the source and decide common system configurations
+ 1. install libRTK
+ 2. install Player
+ 3. install Stage
+ 4. set up your environment
+ 5. test
+
+
+-1: Prerequisites
+
+You need the GIMP toolkit (GTK+-1.x) installed first. If you have
+GNOME installed, you have this already. GTK+ has its own
+dependencies. You can almost certainly use your system's package
+management to simplify GTK+ installation. OS X users can use Fink - it
+works fine for me. 
+
+Optional components include the GNU Science Library (GSL). You can do
+without it for now. You don't need the Open Dynamics Engine unless you
+want to run Gazebo, and these instructions don't cover Gazebo. Look
+for a Player/Gazebo Getting Started in the future.
+
+0. System-wide configuration
+
+Obtain the librtk, Player and Stage distributions. They come packaged
+as compressed tar archives, commonly called 'tarballs'. Get the latest
+releases from:
+
+http://sourceforge.net/project/showfiles.php?group_id=42445
+
+You need:
+
+librtk-src-<version>.tar.gz
+player-src-<version>.tar.gz
+stage-src-<version>.tar.gz
+
+Now figure out where you want to install the software. The install
+location is determined by autoconf's `prefix' variable. The default
+value of prefix depends on your system, but is usually /usr/local. If
+you want to install somewhere else (if e.g. you don't have root
+access, or you have another version installed already), you can change
+`prefix' using an argument to the configure script. For example, to
+install in ~/PS-TEST do this:
+
+./configure --prefix=$HOME/PS-TEST
+
+You should pass the same prefix to each P/S package so they can find
+each other (actually, you can provide paths for each package
+individually if you need to, which is useful for testing modified
+versions, but using a single common prefix is much easier and is
+recommended). If you don't supply a prefix,the default for your system
+(normally /usr/local) will be used. As you read these instructions,
+you should substitute your chosen prefix whenever you see <prefix>.
+
+Note that this is the normal behavior for autoconf, so this knowledge
+should be useful elsewhere. If you're experienced with autoconf, you
+could have guessed that P/S works this way. This is the beauty of
+standard tools.
+
+
+1. libRTK
+
+libRTK is Andrew Howard's Robot ToolKit, used for most of the graphics
+in Player and Stage. It needs to be installed first because Player and
+Stage include it as they compile.
+
+To install in the default location (probably
+/usr/local):
+
+$ ./configure
+
+or to install somewhere else:
+
+$ ./configure --prefix=<prefix>
+
+Now compile the library:
+
+$ make 
+
+If the library builds without errors you install it like this:
+
+$ make install
+
+If 'make install' complains about write permissions, you may need 
+to be root for this step, depending on the installation prefix you
+chose. Generally it's a good idea to be root only when you really 
+have to, so don't forget to change back to your regular UID after 
+this step. 
+
+If successful, you should now be able to find the header file
+<prefix>/include/rtk.h and the library <prefix>/include/librtk.a. You
+should find that these files have very recent modification times.
+
+
+2. Player
+   
+Stage depends on one of Player's header files (player.h, which
+contains most of the interface definitions) and a couple of its
+libraries. So Player comes next.
+
+Change directory to the Player distribution, and follow the same
+procedure:
+
+$ ./configure --prefix=<prefix>
+$ make 
+$ make install
+
+You should now find several more header files in <prefix>/include,
+including player.h. You'll also have the Player binary itself:
+<prefix>/bin/player along with various optional tools.
+
+3. Stage
+
+Change directory to the Stage distribution, and follow the same
+procedure:
+
+$ ./configure --prefix=<prefix>
+$ make 
+$ make install
+
+
+You should now have the Stage binary in <prefix>/bin. 
+
+4. Setting up your environment
+
+You need to have the player and stage binaries in your path. Test this
+with the `which' command:
+
+which player stage
+
+If `which' can not find player and stage, add the binary installation
+directory to your PATH environment variable. 
+
+E.g. in BASH:
+
+$ export PATH=<prefix>/bin:$PATH
+
+and in CSH:
+
+% setenv PATH <prefix>/bin:$PATH
+
+If you don't understand this section, read an introductory UNIX text
+or tutorial. You'll need to have the basics under control to be
+productive with P/S.
+
+You may want to add this PATH change to your login scripts so you
+don't have to do it every time.
+
+5. Testing
+
+Stage needs to be given a 'world file' as an argument. This file
+defines the world that Stage will simulate. The distribution includes
+a few demo world files in the directory `worlds'. To test that Stage
+works, we'll fire one up.
+
+$ cd worlds
+$ stage simple.world
+
+All being well, you'll see some console output declaring the version
+numbers and startup details for Stage and Player. This should be
+shortly followed by Stage's window containing a rectangular red robot
+at the bottom left, in an environment of black obstacles. Move your
+mouse over the robot and you'll see a visualization of a scan
+generated by a simulated laser rangefinder (the blue square on the
+robot). Try dragging the robot around with the mouse and see the scan
+change.
+
+To complete the test, we'll run a Player client; a program that talks
+to Player. In another terminal (remembering to set your PATH) do:
+
+$ playerv
+
+This should pop up another window. From the Devices menu, select
+laser:0. You should see another view of the same laser scan. The
+client program has fetched this data from Player. Like most Player 
+clients, playerv doesn't know that the data comes from a simulator; it 
+works just the same on real robots. Experiment with subscribing and
+commanding position:0 (again in the Device menu). You can drive the
+robot around by dragging the red cross-hairs widget in playerv's
+window. If all this works, your installation is good. Take a look at
+some of the Player example clients in the Player source tree under
+`examples' (not the installation tree). These are separated by
+programming language. For example:
+
+$ cd <player_source_tree/examples/c++
+$ laserobstacleavoid
+
+should get your simple.world robot running around. Player allows 
+multiple clients to connect to robot devices, so if you're still 
+running playerv you can see the laser data changing. 
+
+
+
+
+
+
+
+
+
+
