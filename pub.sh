@@ -2,8 +2,8 @@
 
 export TMPDIR=.
 
-bibtool autolab.bib all.bib
-bibtex2html -r -d -revkeys -nodoc all.bib 
+
+bibtex2html -r -d -revkeys -nodoc autolab.bib 
 
 
 for T in chapter inproceedings thesis article techreport mastersthesis phdthesis incollection misc; do
