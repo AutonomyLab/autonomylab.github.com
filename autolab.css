@@ -82,7 +82,7 @@ a:hover { text-decoration: underline; }
 
 
 
-.title {
+.atitle {
  #border:solid 1px #000;
  #background-color: #eee;
  padding: 0.5em 0.5em 0.5em 0.5em;
@@ -114,7 +114,7 @@ td {
 .dark {  text-align:center;  padding:0em;  border: 0px solid #000; background-color:#EEE; }
 /*.dark { background-color:#BBB; }*/
 
-div.title h1 { 
+div.atitle h1 { 
   font-size:160%;
   /*border: 1px solid #244c92;*/
   margin-top: 0px;

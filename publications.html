@@ -15,14 +15,10 @@
 <TITLE>SFU Autonomy Lab</TITLE>
 
  
-<!-- <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script> -->
-<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" /> -->
-  <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="bibtex_js.js"></script>  
 
-<!--   <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script> -->
-
-
-<script>
+<script type="text/javascript">
 
 function bibtex_js_draw() {
   $(".bibtex_template").hide();
@@ -33,12 +29,7 @@ $(document).ready( function() {
   $("#bibtex_input").load( "autolab.bib",   bibtex_js_draw );
 } );
 
-
-
 </script>
-
-<script type="text/javascript" src="bibtex_js.js"></script>  
-
 
 </HEAD>
 
@@ -94,63 +85,60 @@ $(document).ready( function() {
 </div>
 -->
 
-<div class="bibtex_template">
+<div class="bibtex_template"  style="display:none;">
 
-<span>
+<li style="padding:  0.5em;">
+  <span>
+    <span class="year"></span>
+    <span class="author"></span>.<br>
     <span class="if title" style="font-weight: bold;">
-     <span class="title"></span>     
-     <br>
-     </span>
-   <span class="author"></span>.<br>
-   <span class="if booktitle" style="font-style: italic;">
-     <span class="booktitle"></span>,
-     <span class="if address" style="font-style: normal;">
-       <span class="address"></span>
-     </span>     
-     <br>
-   </span>
-   <span class="if journal" style="font-style: italic;">
-     <span class="journal"></span>
-   </span>
-   <span style="if publisher">
-     <span class="publisher"></span>
-   </span>
-   <span style="if school">
-     <span class="school"></span>
-   </span>
-   <span class="if volume">
-     <span class="volume"></span>
-     <span class="if number">
-       (<span class="number"></span>)
-     </span>
-     <span class="if pages">
-       :<span class="pages"></span>
-     </span>
-   </span>
-   <span class="if edition">
-     <span class="edition"></span> ed.,
-   </span>
-   <span class="if month">
-     <span class="month"></span>
-   </span>
-   <span class="if year">
-     <span class="year"></span>.
-   </span>
-</span>
-<span class="if url">
-  <a class="url" style="">[URL]</a>
-</span>
-<span class="if pdf">
-  <a class="pdf" style="">[PDF]</a>
-</span>
+      <span class="title"></span>     
+      <br>
+    </span>
+    <span class="if booktitle" style="font-style: italic;">
+      <span class="booktitle"></span>,
+      <span class="if address" style="font-style: normal;">
+	<span class="address"></span>
+      </span>     
+    </span>
+    <span class="if journal" style="font-style: italic;">
+      <span class="journal"></span>
+    </span>
+    <span style="if publisher">
+      <span class="publisher"></span>
+    </span>
+    <span style="if school">
+      <span class="school"></span>
+    </span>
+    <span class="if volume">
+      <span class="volume"></span>
+      <span class="if number">
+	(<span class="number"></span>)
+      </span>
+      <span class="if pages">
+	:<span class="pages"></span>
+      </span>
+    </span>
+    <span class="if edition">
+      <span class="edition"></span> ed.,
+    </span>
+  </span>
+  
+  <span class="if url">
+    <a class="url" style="">[URL]</a>
+  </span>
+  <span class="if pdf">
+    <a class="pdf" style="">[PDF]</a>
+  </span>
 
- <hr>
 </div>
 
+<ol reversed>
 <div id="bibtex_display"></div>
 
 
 </div>
+</ol>
 
 </table>
 </table>
