@@ -311,6 +311,13 @@ function BibtexDisplay() {
 
     // iterate over bibTeX entries
     var entries = b.getEntries();
+
+    // sort entries by date
+      // TODO - rtv
+
+    // keep track of the years we have seen.
+    var years = {};
+
     for (var entryKey in entries) {
       var entry = entries[entryKey];
       
@@ -352,8 +359,21 @@ function BibtexDisplay() {
       
       // fill in remaining fields 
       for (var index in keys) {
-        var key = keys[index];
-        var value = entry[key] || "";
+          var key = keys[index];
+          var value = entry[key] || "";
+	  
+	 // console.log( "YO ", key );
+	  
+	  if( key == "YEAR" ) {
+
+	      console.log( "YOOFOO ", key, value );
+	      if( ! years[ value ] ) {
+		  // output.append( "<p style=\"font-weight:bold;\">", value, "</p><hr>" );
+		  output.append( "<br>", value, "<hr>" );
+		  years[ value ] = value;
+	      }
+	  }
+
         tpl.find("span:not(a)." + key.toLowerCase()).html(this.fixValue(value));
         tpl.find("a." + key.toLowerCase()).attr('href', this.fixValue(value));
       }

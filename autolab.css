@@ -16,6 +16,10 @@
 	padding: 0 1em;
 }
 
+.yearhead {
+    font-weight: bold;
+    font-size: 200%;
+}
 
 .bibtexitem
 {
