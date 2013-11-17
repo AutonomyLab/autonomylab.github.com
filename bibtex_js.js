@@ -361,14 +361,10 @@ function BibtexDisplay() {
       for (var index in keys) {
           var key = keys[index];
           var value = entry[key] || "";
-	  
-	 // console.log( "YO ", key );
-	  
+	  	  
 	  if( key == "YEAR" ) {
 
-	      console.log( "YOOFOO ", key, value );
 	      if( ! years[ value ] ) {
-		  // output.append( "<p style=\"font-weight:bold;\">", value, "</p><hr>" );
 		  output.append( "<br>", value, "<hr>" );
 		  years[ value ] = value;
 	      }
