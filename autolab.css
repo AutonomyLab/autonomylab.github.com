@@ -248,7 +248,5 @@ div.projectsummarybox:first-line {
 
 .pdf {  
   font-weight:bold;
- text-decoration: underline;
-  margin-left: 1em;
-  margin-right: 1em;
+  text-decoration: underline;
  } 
