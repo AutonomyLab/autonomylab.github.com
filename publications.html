@@ -23,7 +23,7 @@ function bibtex_js_draw() {
   $(".bibtex_template").hide();
   (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"));
 }
-
+x
 $(document).ready( function() {
   $("#bibtex_input").load( "autolab.bib",   bibtex_js_draw );
 } );
@@ -88,11 +88,11 @@ $(document).ready( function() {
 
 <li style="padding:  0.5em;">
   <span>
-    <span class="author"></span>.<br>
     <span class="if title" style="font-weight: bold;">
       <span class="title"></span>     
       <br>
     </span>
+    <span class="author"></span>.<br>
     <span class="if booktitle" style="font-style: italic;">
       <span class="booktitle"></span>,
       <span class="if address" style="font-style: normal;">
