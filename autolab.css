@@ -47,12 +47,6 @@ body {
   color:#000;
 }
 
-.main {
-  width: 96%;
-  margin-left:2%;
-  /* border: 1px #000 solid; */
-}
-
 a:link { 
 	color: #A00;
 }
@@ -81,16 +75,9 @@ a:visited {
    margin-left: 0px;
 }
 
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
+#a { text-decoration: none; }
+#a:hover { text-decoration: underline; }
 
-
-
-.atitle {
- #border:solid 1px #000;
- #background-color: #eee;
- padding: 0.5em 0.5em 0.5em 0.5em;
-}
 
 .timestamp {
  text-align:right; 
@@ -127,9 +114,6 @@ div.atitle h1 {
   text-align: center;
 }
 
-div.main h1 { 
-  font-size:160%;
-}
 
 
 .mugshot td {
@@ -170,73 +154,14 @@ img {
   align: center;
 }
 
-div.news ul { 
- list-style-type:none;
- /*width:0%;*/
- margin-left:0em;
- padding-left:0em;
-}
 
-div.news li {
- background-color: #eeF;
- margin-bottom: 0.7em;
- border-left:1px solid #bbf; 
- border-right:1px solid #99f; 
- border-bottom:1px solid #99f; 
- border-top:1px solid #bbf; 
- padding:0.5em;
- margin-left:0em;
+.news { 
+ background-color: #e9e9FF;
+ border:1px solid #aaf; 
+ padding:0.4em;
 }
 
 
-/********************
-* The Grey Box Format
-lifted from the USC Robotics research lab web site by rtv.
-********************/
-div.boxinfo {
-  background: #eef;
-  border: 1px solid #eef;
-  padding: 0.5ex 1.0em 0.5ex 1.0em;
-  margin-bottom:20px;
-}
-
-div.boxinfo:first-line {
-  font-weight:bold;
-  font-size: 115%;
-}
-
-div.boxinfo hr {
-    background-color: #244c92;
-    color: #244c92;
-		padding: 0px;
-		height: 1px;
-		border-style: none;
-}
-
-div.projectbox {
-  #background: #eef;
-  border: 1px solid #244c92;
-  padding: 0.5ex 1.0em 0.5ex 1.0em;
-  margin-bottom:20px;
-}
-
-div.projectsummarybox:first-line {
-  font-weight:bold;
-  font-size: 115%;
-}
-
-div.projectsummarybox {
-  background: #eee;
-  #border: 1px solid #244c92;
-  padding: 0.5ex 1.0em 0.5ex 1.0em;
-  margin-top:10px;
-  margin-bottom:10px;
-}
-
-div.projectsummarybox:first-line {
-  font-weight:bold;
-  font-size: 115%;
-}
 
 .shout {
   background-color: #EEF;
