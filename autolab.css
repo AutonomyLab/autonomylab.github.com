@@ -40,7 +40,7 @@
 /* #tabs { width: 100%; } */
 
 body {
-  font-family: sans-serif;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif; 
   margin-left:2%;
   width: 96%;
   background-color: #FFF;
@@ -172,6 +172,11 @@ img {
 
 
 .pdf {  
+  font-weight:bold;
+  text-decoration: underline;
+ } 
+
+.video {  
   font-weight:bold;
   text-decoration: underline;
  } 
