@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Robot Vision Outdoors, What actually works for you, how and why?</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h1 id="robot-vision-outdoors-what-actually-works-for-you-how-and-why-"><a class="header-link" href="#robot-vision-outdoors-what-actually-works-for-you-how-and-why-"></a>Robot Vision Outdoors, What actually works for you, how and why?</h1>
+<p>Summary of <a href="http://ncfrn.mcgill.ca/">NCFRN 2016</a> Birds of a Feather session - June 11, 2016</p>
+<h2 id="summary-of-challenges-mentioned-by-the-audience"><a class="header-link" href="#summary-of-challenges-mentioned-by-the-audience"></a>Summary of challenges mentioned by the audience</h2>
+<ul class="list">
+<li>Considerable change of scale</li>
+<li>Huge search space for learning-based algorithms</li>
+<li>The state of the art modern computer vision techniques do not capture the <em>active</em> element of robot vision</li>
+<li>Adaptation to environmental changes (i.e illumination and dynamic clutter)</li>
+<li>Some state of the art computer vision techniques require precise modeling of the sensor. However, details about the requirement itself or how to do it are sometimes missing in the paper.</li>
+</ul>
+<h2 id="what-are-some-papers-techniques-you-think-everyone-should-know-about-when-using-computer-vision-outdoors-"><a class="header-link" href="#what-are-some-papers-techniques-you-think-everyone-should-know-about-when-using-computer-vision-outdoors-"></a>What are some papers/techniques you think everyone should know about when using computer vision outdoors?</h2>
+<h3 id="papers"><a class="header-link" href="#papers"></a>Papers</h3>
+<ol class="list">
+<li>Corke, Peter, et al. &quot;Dealing with shadows: Capturing intrinsic scene appearance for image-based outdoor localisation.&quot; Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on. IEEE, 2013. (Note: Hong Zhang&#39;s group has developed a novel method for this that runs in realtime. This publication has been submitted to IROS&#39;16)</li>
+<li>Andreopoulos, Alexander, and John K. Tsotsos. &quot;On sensor bias in experimental methods for comparing interest-point, saliency, and recognition algorithms.&quot; Pattern Analysis and Machine Intelligence, IEEE Transactions on 34.1 (2012): 110-126.</li>
+<li>Horn, Berthold. Robot vision. MIT press, 1986.</li>
+<li>Mur-Artal, Raul, J. M. M. Montiel, and Juan D. Tardos. &quot;ORB-SLAM: a versatile and accurate monocular SLAM system.&quot; Robotics, IEEE Transactions on 31.5 (2015): 1147-1163.</li>
+<li>Manderson et al. &quot;Texture-Aware SLAM Using Stereo Imagery And Inertial Information&quot;, Conference on Robotics and Vision (CRV), 2016</li>
+<li>Geiger, Andreas, et al. &quot;Vision meets robotics: The KITTI dataset.&quot; The International Journal of Robotics Research (2013)</li>
+</ol>
+<h3 id="techniques"><a class="header-link" href="#techniques"></a>Techniques</h3>
+<ul class="list">
+<li>Add more sensors (i.e. IMUs) and fuse them properly with vision</li>
+<li>Use wide field of view lenses (for vision-based localization) ~ 160-170 degrees</li>
+<li>Supplement detectors with [visual] trackers</li>
+<li>Use multiple cameras if you can afford the overhead</li>
+</ul>
+<h2 id="what-are-some-hardware-i-e-sensors-software-you-believe-others-should-know-about-when-using-computer-vision-outdoors-"><a class="header-link" href="#what-are-some-hardware-i-e-sensors-software-you-believe-others-should-know-about-when-using-computer-vision-outdoors-"></a>What are some hardware (i.e. sensors) / software you believe others should know about when using computer vision outdoors?</h2>
+<ul class="list">
+<li><a href="https://www.ximea.com/en/products/usb3-vision-standard-designed-cameras-xiq">Ximea USB 3.0 Global Shutter Camera</a> + <a href="https://github.com/wavelab/ximea_camera">ROS Support</a></li>
+<li><a href="http://www.dji.com/product/matrice100">DJI Matrice UAV</a> + <a href="https://github.com/dji-sdk/Onboard-SDK-ROS">ROS Support</a></li>
+<li>Parrot Bebop Drones <a href="http://www.parrot.com/ca/products/bebop-drone/">1</a> and <a href="http://www.parrot.com/ca/products/bebop2/">2</a> + <a href="http://bebop-autonomy.readthedocs.io/en/latest/">ROS Support</a></li>
+<li><a href="https://get.google.com/tango/">Google Tango Kit</a> - <em>Maybe</em></li>
+<li><a href="https://github.com/klahaag/CFtld">CFtld Tracker</a>, ROS wrapper comming soon (<a href="https://github.com/AutonomyLab/bebop_hri/releases/download/iros16_submission/AutonomyLab-cftld_ros-68eb0b0774ae.tar.gz">Download the prerelease</a>)</li>
+</ul>
+<h2 id="success-failure-stories"><a class="header-link" href="#success-failure-stories"></a>Success/Failure Stories</h2>
+<h3 id="semi-successful-application-of-orb-slam-outdoors-on-a-uav"><a class="header-link" href="#semi-successful-application-of-orb-slam-outdoors-on-a-uav"></a>Semi-successful application of ORB-SLAM outdoors on a UAV</h3>
+<ul class="list">
+<li>By AutonomyLab</li>
+<li>Date &amp; Location: Laurentian Coservation Area - June 9th, 2016</li>
+<li>Platform: Parrot Bebop 2.0 (stabilized 360p video stream)</li>
+</ul>
+<h4 id="failure-case"><a class="header-link" href="#failure-case"></a>Failure Case</h4>
+<ul class="list">
+<li>Lawnmower pattern (80mx10m legs, 6m of altitude)</li>
+<li>Has trouble with initialing, loses track after a while</li>
+<li><a href="https://drive.google.com/file/d/0B9O4b91VYXMdUlBNWVpPYmwxN28/view?usp=sharing">Video URL</a></li>
+</ul>
+<h4 id="success-case"><a class="header-link" href="#success-case"></a>Success Case</h4>
+<ul class="list">
+<li>Circular pattern looking outwards (5m radius, 6m of altitude)</li>
+<li>Works reasonably well, perform loop closure</li>
+<li><a href="https://drive.google.com/file/d/0B9O4b91VYXMdMEFpaTdnaWZlSEk/view?usp=sharing">Video URL</a></li>
+</ul>
+    </article>
+  </body>
+</html>
