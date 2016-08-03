@@ -1,0 +1,104 @@
+
+<html>
+  <head>
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+      dataTable.addColumn({ type: 'string', id: 'Position' });
+      dataTable.addColumn({ type: 'string', id: 'Name' });
+      dataTable.addColumn({ type: 'date', id: 'Start' });
+      dataTable.addColumn({ type: 'date', id: 'End' });
+
+        dataTable.addRows([
+          [ 'Person',   'Today', new Date(), new Date() ],
+          [ 'Vaughan',  'Assistant Professor',  new Date(2004, 0, 1),   new Date(2010, 7, 1) ],
+          [ 'Vaughan',  'Associate Professor',  new Date(2010, 8, 1),   new Date(2019, 0, 1) ],
+          [ 'Vaughan',  'RAS ADCOM',  new Date(2015, 6, 1),   new Date(2017, 6, 1) ],
+          [ 'Vaughan',  'IROS\'17 Program Chair',  new Date(2017, 9, 1),   new Date(2017, 10, 2) ],
+          [ 'Vaughan',  'Sussex & BRL Visitor',  new Date(2010, 3, 1),   new Date(2010, 9, 1) ],
+          [ 'Vaughan',  'SFU CS Undergrad Director',  new Date(2011, 0, 1),   new Date(2014, 8, 1) ],
+          [ 'Zebrowski',  'MSc',  new Date(2004, 0, 1),   new Date(2005, 7, 1) ],
+          [ 'Zebrowski',  'Infomine',  new Date(2005, 8, 1),   new Date(2005, 8, 1) ],
+          [ 'Zebrowski',  'NuData',  new Date(2014, 4, 1),   new Date(2014, 4, 1) ],
+          [ 'Brown',      'MSc (NC)',  new Date(2004, 0, 1),   new Date(2006, 7, 1) ],
+          [ 'Brown',      'Mintec',  new Date(2006, 8, 1),   new Date(2006, 8, 1) ],
+          [ 'Zuluaga',    'MSc',  new Date(2004, 0, 1),   new Date(2005, 7, 1) ],
+          [ 'Zuluaga',    'PhD (NC)',  new Date(2005, 8, 1),   new Date(2006, 8, 1) ],
+          [ 'Zuluaga',    'Google',  new Date(2006, 9, 1),   new Date(2006, 9, 1) ],
+          [ 'Litus',      'PhD',  new Date(2004, 0, 1),   new Date(2006, 6, 1) ],
+          //[ 'Litus',      '(leave)',  new Date(2006, 7, 1),   new Date(2008, 6, 1) ],
+          [ 'Litus',      'PhD',  new Date(2008, 7, 1),   new Date(2010, 6, 1) ],
+          [ 'Litus',      'Google',  new Date(2010, 7, 1),   new Date(2010, 7, 1) ],
+          [ 'Wawerla',    'PhD',  new Date(2004, 8, 1),   new Date(2010, 6, 1) ],
+          [ 'Wawerla',    'SFU Postdoc',  new Date(2010, 8, 1),   new Date(2010, 8, 1) ],
+          [ 'Wawerla',    'SFU Research Associate',  new Date(2013, 6, 1),   new Date(2013, 6, 1) ],
+          [ 'Wawerla',    'SNC-Lavelin',  new Date(2015, 8, 1),   new Date(2015, 8, 1) ],
+          [ 'Zhang Y.',   'MSc',  new Date(2004, 8, 1),   new Date(2006, 7, 1) ],
+          [ 'Zhang Y.',   'Internet startup',  new Date(2006, 8, 1),   new Date(2006, 8, 1) ],
+          [ 'Karimian',   'MSc',  new Date(2005, 8, 1),   new Date(2007, 6, 1) ],
+          [ 'Karimian',   'Zite/CNN',  new Date(2007, 7, 1),   new Date(2007, 7, 1) ],
+          [ 'Karimian',   'Sencha',  new Date(2008, 8, 1),   new Date(2008, 8, 1) ],
+          [ 'Karimian',   'Facebook',  new Date(2015, 0, 1),   new Date(2015, 0, 1) ],
+          [ 'Mottaghi',   'MSc',  new Date(2005, 8, 1),   new Date(2006, 6, 1) ],
+          [ 'Mottaghi',   'MSc GATech',  new Date(2006, 8, 1),   new Date(2006, 8, 1) ],
+          [ 'Mottaghi',   'PhD UCLA',  new Date(2009, 9, 1),   new Date(2009, 9, 1) ],
+          [ 'Mottaghi',   'Postdoc Stanford',  new Date(2011, 8, 1),   new Date(2011, 8, 1) ],
+          [ 'Lein',       'MSc',  new Date(2008, 0, 1),   new Date(2010, 0, 1) ],
+          [ 'Lein',       'Mintec',  new Date(2010,1, 1),   new Date(2010, 1, 1) ],
+          [ 'Lein',       'Google',  new Date(2013,7, 1),   new Date(2013, 7, 1) ],
+          [ 'Jabbari',    'MSc',  new Date(2008, 8, 1),   new Date(2011, 0, 1) ],
+          [ 'Jabbari',    'Fortinet',  new Date(2011, 5, 1),   new Date(2011, 5, 1) ],
+          [ 'Couture-Biel', 'MSc', new Date(2008, 8, 1),   new Date(2010, 7, 1) ],
+          [ 'Couture-Biel', 'Activision Blizzard', new Date(2010, 8, 1),   new Date(2010, 8, 1) ],
+          [ 'Charles',    'MSc (NC)',  new Date(2008, 8, 1),   new Date(2010, 8, 1) ],
+          [ 'Charles',    'Gumstix',  new Date(2010, 9, 1),   new Date(2010, 9, 1) ],
+          [ 'Milligan',   'MSc',  new Date(2009, 8, 1),   new Date(2012, 5, 1) ],
+          [ 'Milligan',   'Microsoft Studios',  new Date(2012, 6, 1),   new Date(2012, 6, 1) ],
+          [ 'Sadat',      'PhD',  new Date(2011, 8, 1),   new Date(2016, 6, 1) ],
+          [ 'Sadat',      'MSc',  new Date(2009, 8, 1),   new Date(2011, 8, 1) ],
+          [ 'Sadat',      'Intern: Bosch',  new Date(2015, 8, 1),   new Date(2016, 0, 1) ],
+          [ 'Sadat',      'Intern: Koolhaus',  new Date(2012, 0, 1),   new Date(2012, 9, 1) ],
+          [ 'Sadat',      'Bosch',  new Date(2016, 8, 1),   new Date(2016, 8, 1) ],
+          [ 'Monajjemi',  'PhD',  new Date(2011, 8, 1),   new Date(2016, 8, 1) ],
+          [ 'Monajjemi',  'Intern: Clearpath',  new Date(2014, 0, 1),   new Date(2014, 7, 1) ],
+          [ 'Pourmehr',   'PhD',  new Date(2012, 0, 1),   new Date(2016, 8, 1) ],
+          [ 'Pourmehr',  'Intern: Clearpath',  new Date(2014, 0, 1),   new Date(2014, 7, 1) ],
+          [ 'Bruce',      'MSc',  new Date(2013, 8, 1),   new Date(2015, 7, 1) ],
+          [ 'Bruce',      'PhD QUT',  new Date(2015, 11, 1),   new Date(2015, 11, 2) ],
+          [ 'Thomas',     'PhD',  new Date(2014, 0, 1),   new Date(2017, 6, 1) ],
+          [ 'Zhang L.',   'MSc',  new Date(2014, 8, 1),   new Date(2016, 8, 1) ],
+          [ 'MohaimenianPour', 'MSc', new Date(2015, 8, 1),   new Date(2017, 6, 1) ],
+          [ 'Perron',     'MSc',  new Date(2014, 9, 1),   new Date(2016, 7, 1) ],
+          [ 'Perron',     'PhD',  new Date(2016, 8, 1),   new Date(2017, 9, 1) ],
+      ]);
+
+      var options = {
+      <!-- colors: ['#cbb69d', '#603913', '#c69c6e'], -->
+      timeline: { rowLabelStyle: {fontName: 'Helvetica', fontSize: 10, color: '#603913' },
+      barLabelStyle: { fontName: 'Helvetica', fontSize: 10 } }
+      };
+
+      chart.draw(dataTable, options );
+
+      $('#timeline text:contains("Today")').attr('fill','#A6373C').prev().first().attr('height','90\%').attr('width','2px').attr('y','0');
+
+      }
+  </script>
+    
+  </head>
+  <body>
+    <!-- <div id="timeline" style="height: 180px;"></div> -->
+    <div id="timeline" style="height: 1000px; width: 90%;"></div>
+  </body>
+
+  
+
+</html>
