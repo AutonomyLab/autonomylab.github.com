@@ -367,5 +367,59 @@
       "2010-09-01T07:00:00.000Z",
       "2016-08-04T02:20:15.291Z"
     ]
-  ]
- }
+  ],
+    "NSERC Discovery": [
+	[
+	    "Disco1",
+	    "1 April 2003",
+	    "31 March 2004"
+	],
+	[ 
+	    "Disco 2",
+	    "1 April 2004",
+	    "31 March 2009"
+	],
+	[ 
+	    "Disco3",
+	    "1 April 2009",
+	    "31 March 2016"
+	],
+	[ 
+	    "Disco4",
+	    "1 April 2016",
+	    "31 March 2021"
+	]
+    ],
+    "NSERC RTI": [
+	[
+	   "RTI3",
+	    "1 April 2015",
+	    "31 March 2016"
+       ],
+       [ 
+	    "Chatterbox",
+	   "1 April 2004",
+	   "31 March 2005"
+       ],
+	[ 
+	    "RTI2",
+	    "1 April 2007",
+	    "31 March 2008"
+	]
+    ],
+    "NSERC Strategic Network": [
+	[
+	    "Field Robotics Network",
+	    "1 July 2012",
+	    "30 June 2017"
+	]
+    ],
+   "DRDC" : [
+       [ 
+	   "FASR", 
+	   "1 July 2005",
+	   "1 July 2007"
+       ]
+   ]
+
+}
