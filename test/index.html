@@ -1,16 +1,44 @@
 
 <html>
   <head>
-    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="labtimeline.js"></script>
+    <script type="text/javascript" src="timeline.js"></script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback( function(){ drawChart( 'people', 'timeline.json' )} );
+      google.charts.setOnLoadCallback( function(){ drawChart( 'pubs', 'pubs.json' )} ); 
+      google.charts.setOnLoadCallback( function(){ drawChart( 'funding', 'funding.json' )} ); 
     
+      <!-- $(window).on( 'resize', function (event) { -->
+      <!-- console.log( "resize event", event ); -->
+      <!-- debounce( function(){drawChart( 'people', 'timeline.json' )}, 1000 ); -->
+      <!-- drawChart( 'pubs', 'pubs.json' );  -->
+      <!-- drawChart( 'funding', 'funding.json' );      -->
+      <!-- }); -->
+
+    </script>
   </head>
+
   <body>
-    <!-- <div id="timeline" style="height: 180px;"></div> -->
-    <div id="timeline" style="height: 1000px; width: 90%;"></div>
+    <h1>Autonomy Lab Timelines</h1>
+    
+    <div style="width:90%; margin: 0 auto;">
+      
+      <h2>Positions</h2>
+      <div  id="people" style="width: 100%; height: 1400;"></div>
+      <p>(source: <a href="timeline.json">JSON</a>)</p>
+      
+      <h2>Publications</h2>
+      <div id="pubs" style="width: 100%; height: 1500;"></div>
+      <p>(source: <a href="../autolab.bib">BiBTeX</a>, <a href="pubs.json">JSON</a>)</p>
+      
+      <h2>Major Funding</h2>
+      <div id="funding" style="width: 100%; height: 300;"></div>
+      <p>(source: <a href="funding.json">JSON</a>)</p>
+      
+    </div>
+    
   </body>
-
-  
-
 </html>

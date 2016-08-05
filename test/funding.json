@@ -1,0 +1,55 @@
+{
+    "NSERC Discovery": [
+	[
+	    "Disco1",
+	    "1 April 2004",
+	    "31 March 2005"
+	],
+	[ 
+	    "Constructive ecology",
+	    "1 April 2005",
+	    "31 March 2010"
+	],
+	[ 
+	    "Energy efficient multi-robot systems",
+	    "1 April 2010",
+	    "31 March 2016"
+	],
+	[ 
+	    "Multi-Human Multi-Robot Interaction",
+	    "1 April 2016",
+	    "31 March 2021"
+	]
+    ],
+    "NSERC RTI": [
+	[
+	   "Vision based autonomous navigation and HRI for a team of flying robots",
+	    "1 April 2015",
+	    "31 March 2016"
+       ],
+	[ 
+	    "Chatterbox: autonomous, heterogenous 32-robot colony with audio communication and cooperative recharging",
+	    "1 April 2004",
+	    "31 March 2005"
+	],
+	[ 
+	    "HRI in the Sky: Command and Control of Teams of Flying Robots by Uninstrumented Operators",
+	    "1 April 2013",
+	    "31 March 2014"
+	]
+    ],
+    "NSERC Strategic Network": [
+	[
+	    "Field Robotics Network",
+	    "1 July 2012",
+	    "30 June 2017"
+	]
+    ],
+    "DRDC" : [
+	[ 
+	    "FASR", 
+	    "1 July 2005",
+	    "1 July 2007"
+	]
+    ]
+}
