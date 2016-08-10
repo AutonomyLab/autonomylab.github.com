@@ -52,7 +52,8 @@ function drawChart( divid, filename ) {
 	    google.visualization.events.addListener(chart, 'ready', function() {
 		console.log( "ready responder" );
 		// svg elements don't have inner/outerHTML properties, so use the parents
-		el = container.getElementsByTagName('svg')[0];
+		// el = container.getElementsByTagName('svg')[0].outerHTML;
+		el = container.getElementsByTagName('svg')[0]; //.getBoundingClientRect();//[0].outerHTML;
 		
 		console.log( el );
 		rect = el.getBoundingClientRect();
