@@ -21,11 +21,16 @@
 
 function bibtex_js_draw() {
   $(".bibtex_template").hide();
-  (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"));
+  (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"), '*' );
 }
 
 $(document).ready( function() {
-  $("#bibtex_input").load( "autolab.bib", bibtex_js_draw );
+  $("#bibtex_input").load( "autolab.bib", bibtex_js_draw )
+
+  $("*[type='radio']").click(function(){
+         (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"),            $(this).attr('value') );
+     });
+;
 } );
 
 </script>
@@ -105,9 +110,15 @@ $(document).ready( function() {
     <span style="if publisher">
       <span class="publisher"></span>
     </span>
-    <span style="if school">
-      <span class="school"></span>
+    
+    <span style="if renderkind">
+      <span class="renderkind"></span>
     </span>
+    
+    <span style="if school">
+      <span class="school"></span> 
+    </span>
+    
     <span class="if volume">
       <span class="volume"></span>
       <span class="if number">
@@ -120,9 +131,11 @@ $(document).ready( function() {
     <span class="if edition">
       <span class="edition"></span> ed.,
     </span>
+    <span class="if month">
+      <span class="month"></span>
+    </span>
     <span class="year"></span>
   </span>
-  
   <span class="if url">
     <a class="url" style="">URL</a>
   </span>
@@ -138,6 +151,15 @@ $(document).ready( function() {
 <p>This page is generated dynamically from a <a href="autolab.bib">bibtex file</a>. 
 
 <p>If you can't find what you need, or you see errors, let us  know at vaughan@sfu.ca.
+
+<form>
+  Show: <br>
+  <input type="radio" name="filter" value="*" checked> All <br>
+  <input type="radio" name="filter" value="@INPROCEEDINGS"> Conference papers<br>
+  <input type="radio" name="filter" value="@ARTICLE"> Journal articles<br>
+  <input type="radio" name="filter" value="@PHDTHESIS"> PhD theses<br>
+  <input type="radio" name="filter" value="@MASTERSTHESIS"> MSc theses
+</form>
 
 <ol reversed>
 <div id="bibtex_display"></div>

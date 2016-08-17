@@ -14,6 +14,16 @@
 //  value -> value_quotes | value_braces | key;
 //  value_quotes -> '"' .*? '"'; // not quite
 //  value_braces -> '{' .*? '"'; // not quite
+
+var typetable = { //'@INPROCEEDINGS': 'Conf.',
+		  //'@ARTICLE': 'Journal',
+		  '@PHDTHESIS': 'PhD Thesis',
+		  '@MASTERSTHESIS': 'MSc Thesis',
+		  '@TECHREPORT': 'Technical Report'
+}
+		  
+		  
+
 function BibtexParser() {
   this.pos = 0;
   this.input = "";
@@ -186,12 +196,6 @@ function BibtexParser() {
     }
   }
 
-  this.entry_body = function() {
-    this.currentEntry = this.key();
-    this.entries[this.currentEntry] = new Object();    
-    this.match(",");
-    this.key_value_list();
-  }
 
   this.directive = function () {
     this.match("@");
@@ -211,13 +215,27 @@ function BibtexParser() {
     this.value(); // this is wrong
   }
 
-  this.entry = function() {
-    this.entry_body();
+  this.entry = function( kind ) {
+    this.currentEntry = this.key();
+    this.entries[this.currentEntry] = new Object();    
+
+    this.entries[this.currentEntry]['KIND'] = kind;
+
+    var renderkind = typetable[ kind ];
+    if( renderkind != null ) { 
+	this.entries[this.currentEntry]['RENDERKIND'] = renderkind;
+    }
+
+    this.match(",");
+    this.key_value_list();
   }
 
   this.bibtex = function() {
     while(this.tryMatch("@")) {
       var d = this.directive().toUpperCase();
+
+      // console.log( d );
+
       this.match("{");
       if (d == "@STRING") {
         this.string();
@@ -226,7 +244,7 @@ function BibtexParser() {
       } else if (d == "@COMMENT") {
         this.comment();
       } else {
-        this.entry();
+        this.entry( d );
       }
       this.match("}");
     }
@@ -251,56 +269,11 @@ function BibtexDisplay() {
     return value;
   }
   
-  this.displayBibtex2 = function(i, o) {
-    var b = new BibtexParser();
-    b.setInput(i);
-    b.bibtex();
+  this.displayBibtex = function(input, output, filter) {
 
-    var e = b.getEntries();
-    var old = o.find("*");
-  
-    for (var item in e) {
-      var tpl = $(".bibtex_template").clone().removeClass('bibtex_template');
-      tpl.addClass("unused");
-      
-      for (var key in e[item]) {
-      
-        var fields = tpl.find("." + key.toLowerCase());
-        for (var i = 0; i < fields.size(); i++) {
-          var f = $(fields[i]);
-          f.removeClass("unused");
-          var value = this.fixValue(e[item][key]);
-          if (f.is("a")) {
-            f.attr("href", value);
-          } else {
-            var currentHTML = f.html() || "";
-            if (currentHTML.match("%")) {
-              // "complex" template field
-              f.html(currentHTML.replace("%", value));
-            } else {
-              // simple field
-              f.html(value);
-            }
-          }
-        }
-      }
-    
-      var emptyFields = tpl.find("span .unused");
-      emptyFields.each(function (key,f) {
-        if (f.innerHTML.match("%")) {
-          f.innerHTML = "";
-        }
-      });
-    
-      o.append(tpl);
-      tpl.show();
-    }
-    
-    old.remove();
-  }
+      // clear the old output
+      document.getElementById( 'bibtex_display' ).innerHTML = "";
 
-
-  this.displayBibtex = function(input, output) {
     // parse bibtex input
     var b = new BibtexParser();
     b.setInput(input);
@@ -321,6 +294,12 @@ function BibtexDisplay() {
     for (var entryKey in entries) {
       var entry = entries[entryKey];
       
+	if( filter != '*' && entry[ 'KIND' ] != filter ){
+	    continue;
+	}
+	
+      console.log( entry );
+
       // find template
       var tpl = $(".bibtex_template").clone().removeClass('bibtex_template');
       
@@ -361,7 +340,15 @@ function BibtexDisplay() {
       for (var index in keys) {
           var key = keys[index];
           var value = entry[key] || "";
-	  	  
+
+	  // abbreviations
+	  value = value.replace( "Proceedings of the", "Proc." );
+	  value = value.replace( "International Conference", "Int. Conf." );
+
+	  if( key == 'AUTHOR' ) {
+	      value = value.replace( / and/g, "," );
+	  }
+
 	  if( key == "YEAR" ) {
 
 	      if( ! years[ value ] ) {
@@ -377,6 +364,8 @@ function BibtexDisplay() {
       output.append(tpl);
       tpl.show();
     }
+
+
     
     // remove old entries
     old.remove();
