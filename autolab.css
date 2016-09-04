@@ -37,14 +37,16 @@
 .icons { align:center; padding:0.8em; padding-left:0; }
 .icons img { align:center; padding:0.2em;}
 
-/* #tabs { width: 100%; } */
-
 body {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif; 
-  margin-left:2%;
-  width: 96%;
-  background-color: #FFF;
+  font-family: sans-serif;
+  margin-left:4%;
+  width: 92%;
+  background-color: #fff;
   color:#000;
+}
+
+.navbar a {
+ text-decoration: none;
 }
 
 a:link { 
@@ -107,14 +109,11 @@ td {
 
 div.atitle h1 { 
   font-size:160%;
-  /*border: 1px solid #244c92;*/
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0.0ex 0.0em 0.0ex 0.0em;
   text-align: center;
 }
-
-
 
 .mugshot td {
  /* border: 1px solid #F00; */
@@ -136,10 +135,6 @@ div.atitle h1 {
 }
 
 
-h2 {
-  font-size:110%;
-  /* background-color: #DDD; */
-}
 
 table {
   width: 100%;
@@ -154,22 +149,32 @@ img {
   align: center;
 }
 
-
-.news { 
- background-color: #e9e9FF;
- border:1px solid #aaf; 
- padding:0.4em;
+.news ul { 
+   margin-top: 0em;
+   list-style: none; 
+   padding:0em;
 }
 
+.news h2 {
+  font-size:110%;
+  margin-bottom: 0em;
+}
 
+.news li {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.news li:nth-child(even) 
+{ 
+    background: #eee; 
+}
 
 .shout {
   background-color: #EEF;
   border: 2px solid red;
   padding: 1em;
 }
-
-
 
 .pdf {  
   font-weight:bold;
