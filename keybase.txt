@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/rtv
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://autonomylab.org
+  * I am rtv (https://keybase.io/rtv) on keybase.
+  * I have a public key ASAPYd-tmLboqK9c0H3OROame9VA2CJCkZw_k1VhsWJ4ggo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01200f61dfad98b6e8a8af5cd07dce44e6a67bd540d82242919c3f935561b16278820a",
+            "host": "keybase.io",
+            "kid": "01200f61dfad98b6e8a8af5cd07dce44e6a67bd540d82242919c3f935561b16278820a",
+            "uid": "13ebcbda98e6e355b5c61adb0d55e819",
+            "username": "rtv"
+        },
+        "service": {
+            "hostname": "autonomylab.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1486596056,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1486596000,
+        "hash": "83009681b0f5f161aaa05989a57cd5f42d99fb95c443c6cbbf22ff54f66f94073ba22b7c6c2bb4b0679de1d92787f10601c0d1d7ca9e8d3bf8266e40b060f45d",
+        "seqno": 849102
+    },
+    "prev": "a31bcc4cd7cc066067e76192d66c7cdd6401912b293f1596ae650d6e462aaae1",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgD2HfrZi26KivXNB9zkTmpnvVQNgiQpGcP5NVYbFieIIKp3BheWxvYWTFAvF7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMGY2MWRmYWQ5OGI2ZThhOGFmNWNkMDdkY2U0NGU2YTY3YmQ1NDBkODIyNDI5MTljM2Y5MzU1NjFiMTYyNzg4MjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMGY2MWRmYWQ5OGI2ZThhOGFmNWNkMDdkY2U0NGU2YTY3YmQ1NDBkODIyNDI5MTljM2Y5MzU1NjFiMTYyNzg4MjBhIiwidWlkIjoiMTNlYmNiZGE5OGU2ZTM1NWI1YzYxYWRiMGQ1NWU4MTkiLCJ1c2VybmFtZSI6InJ0diJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiYXV0b25vbXlsYWIub3JnIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xOCJ9LCJjdGltZSI6MTQ4NjU5NjA1NiwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDg2NTk2MDAwLCJoYXNoIjoiODMwMDk2ODFiMGY1ZjE2MWFhYTA1OTg5YTU3Y2Q1ZjQyZDk5ZmI5NWM0NDNjNmNiYmYyMmZmNTRmNjZmOTQwNzNiYTIyYjdjNmMyYmI0YjA2NzlkZTFkOTI3ODdmMTA2MDFjMGQxZDdjYTllOGQzYmY4MjY2ZTQwYjA2MGY0NWQiLCJzZXFubyI6ODQ5MTAyfSwicHJldiI6ImEzMWJjYzRjZDdjYzA2NjA2N2U3NjE5MmQ2NmM3Y2RkNjQwMTkxMmIyOTNmMTU5NmFlNjUwZDZlNDYyYWFhZTEiLCJzZXFubyI6NiwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEArN7bmhdyxUGvNRfoTsskigIDzs39aXbtDI7JtXZPOso4kG6kHaMvpHZkHwi+a5tHjKtiafE7hGDtjsl8wOFAPqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgkSdQuCYObTRLn3sKI7sgHtoVWdFVeoNZhwOQT5ZfepSjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rtv
+
+==================================================================
