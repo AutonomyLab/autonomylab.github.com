@@ -28,7 +28,7 @@ $(document).ready( function() {
   $("#bibtex_input").load( "autolab.bib", bibtex_js_draw )
 
   $("*[type='radio']").click(function(){
-         (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"),            $(this).attr('value') );
+         (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"), $(this).attr('value') );
      });
 ;
 } );
@@ -110,6 +110,10 @@ $(document).ready( function() {
     <span style="if publisher">
       <span class="publisher"></span>
     </span>
+
+    <span style="if howpublished">
+      <span class="howpublished"></span>
+    </span>
     
     <span style="if renderkind">
       <span class="renderkind"></span>
@@ -158,7 +162,8 @@ $(document).ready( function() {
   <input type="radio" name="filter" value="@INPROCEEDINGS"> Conference papers<br>
   <input type="radio" name="filter" value="@ARTICLE"> Journal articles<br>
   <input type="radio" name="filter" value="@PHDTHESIS"> PhD theses<br>
-  <input type="radio" name="filter" value="@MASTERSTHESIS"> MSc theses
+  <input type="radio" name="filter" value="@MASTERSTHESIS"> MSc theses<br>
+  <input type="radio" name="filter" value="@MISC"> Other (Abstracts, posters, etc.)
 </form>
 
 <ol reversed>
