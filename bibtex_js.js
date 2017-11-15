@@ -291,6 +291,8 @@ function BibtexDisplay() {
     // keep track of the years we have seen.
     var years = {};
 
+    console.log( entries );
+
     for (var entryKey in entries) {
       var entry = entries[entryKey];
       
@@ -298,7 +300,7 @@ function BibtexDisplay() {
 	    continue;
 	}
 	
-      console.log( entry );
+      //console.log( entry );
 
       // find template
       var tpl = $(".bibtex_template").clone().removeClass('bibtex_template');
